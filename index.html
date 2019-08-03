@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
 <head>
 <title>Projeto Future4</title>
+<style>
+/*Definição de classes de estilo globais*/
+    body {background-color: slateblue}
+    .texto {color: white; font-family: Arial}
+    .maior {font-size:50px}
+    .menor {font-size:30px}
+    .center {text-align: center}
+    .right {text-align: right}
+    .italico {font-style: italic}
+</style>
 </head>
-<body style="background-color:slateblue">
+<body>
 
-<h1 style="color:white" style="text-align:center"><b>Processo seletivo Future4</b></h1>
-<img src="future4.jpg" width="551" height="250" alt="logomarca future4">
-<p style="color:white" style="text-align: right"><i>Turma Web Full Stack 01</i></p>
-<button> Enviar</button>
+<h1 class="texto maior center"><b>Projeto seletivo Future4</b></h1>
+<img id="future4" src="future4.jpg" width="551" height="250" alt="logomarca future4">
+<p class="texto menor right italico"><b>Turma Web Full Stack 01</b></p>
+<h1 style="border: 10px solid Tomato"></h1>
+
+
+
+<form action="/action_page.php" autocomplete="on">
+    <input type="email" name="email" placeholder="Coloque aqui o seu email" autofocus>
+    <input type="submit">
+</form>
 
 </body>
 </html>

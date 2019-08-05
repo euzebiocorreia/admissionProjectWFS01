@@ -4,79 +4,145 @@
 <title>Projeto Future4</title>
 <style>
 /*Definição de classes de estilo globais*/
-body{background-color: slateblue}
-.cor{color: white; }
-.tomato{color:tomato}
-.maior{font-size:500%}
-.menor{font-size:250%}
-.center{text-align: center}
-.right{text-align: right}
-.italico{font-style: italic}
-.fonte{font-family: Arial, Helvetica, sans-serif}
-h1{color: white; font-family: Arial; text-align: center; font-size: 350%;}
-/**/
+/*body{background-color: rgb(103, 123, 182)}*/
+
 * {
   box-sizing: border-box;
 }
+.box1 {
+  width: 100%;
+  padding-top:130px;
+  padding-bottom: 100px;
+  text-align: center;
+  font-size: 350%;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0%
+}
 
-.box {
+.box2 {
+  width: 100%;
+  padding-top:200px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  text-align: right;
+  font-size: 250%;
+  font-style: italic;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.box3 {
   float: left;
   width: 33.33%;
   padding: 50px;
   background-color: white;
-  border:30px solid tomato;
-  
+  border:30px solid orangered;
+  text-align: center;
+  font-size: 250%;
+  color: orangered;
+  font-family: Arial, Helvetica, sans-serif  
+}
+
+.box4{
+  background-color: rgb(103, 123, 182)
 }
 
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
+  overflow: auto
 }
-/**/
-div.box1{
-    background-color: lightgrey;
-    width: 300px;
-    border: 15px solid green;
-    padding: 50px;
-    margin: 20px;
+
+.box5{
+  height: 20em; width: 100%; 
+  background-color:rgb(187, 187, 187); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-div.box2{
-    height: 200px; width: 100%; 
-    background-color:white; text-align: center;
-    }
+
+img { 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+input[type=button]{
+  background-color:orangered;
+  color: white;
+  font-size:200%;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 12px 30px;
+  text-decoration: none;
+  margin: 0%;
+  cursor:pointer; 
+  border: 2px solid black
+  
+}
+
+input[type=email]{
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 200%;
+  border: 2px solid black;
+}
 
 </style>
 </head>
-<body>
+<body style="height: 100%; width: 100%; margin: 0px; overflow: auto;">
 
-<h1><b>Projeto seletivo Future4</b></h1>
+<div class="box4 clearfix">
+  
+  <div>
+  <h1 class="box1"><b>Projeto seletivo Future4</b></h1>
+  </div>
 
-<div class="imagem">
-<img id="future4" src="future4.jpg" width="551" height="250" alt="logomarca future4">
+  <img id="future4" src="future4.jpg" alt="logomarca future4"/>
+  
+  <div>
+  <h2 class="box2"><b>Turma Web Full Stack 01</b></h2>
+  </div>
+
+
 </div>
 
-<h2 class="cor fonte menor right italico"><b>Turma Web Full Stack 01</b></h2>
-
-<div class="clearfix fonte menor tomato"><b>
-    <div class="box center" style="background-color:white">
+<div class="clearfix"><b>
+    <div class="box3">
     <p>HTML</p>
     </div>
-    <div class="box center" style="background-color:white">
+    <div class="box3">
     <p>CSS</p>
     </div>
-    <div class="box center" style="background-color:white">
+    <div class="box3">
     <p>Javascript</p>
     </div></b>
   </div>
 
-<div class="box2">
-    <form action="/action_page.php" autocomplete="on">
-        <input type="email" name="email" placeholder="Coloque aqui o seu email" autofocus>
-        <input type="submit">
-    </form>
+
+<div class="box5">
+  <form action="x" autocomplete="on">
+    <div>
+      <input type="email" id="email" placeholder="Coloque aqui o seu email">
+      <input type="button" onclick="message()" value="Enviar">
+    </div>  
+  </form>
     
 </div>
+
+<script>
+  function message(){
+    var e = document.getElementById("email").value;
+    var message = "O email " + e + " foi enviado";
+    alert(message)
+    
+  }
+</script>
 
 
 

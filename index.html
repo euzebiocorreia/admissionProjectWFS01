@@ -2,19 +2,19 @@
 <html>
 <head>
 <title>Projeto Future4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 /*Definição de classes de estilo globais*/
-/*body{background-color: rgb(103, 123, 182)}*/
 
 * {
   box-sizing: border-box;
 }
 .box1 {
   width: 100%;
-  padding-top:130px;
-  padding-bottom: 100px;
+  padding-top:13%;
+  padding-bottom: 10%;
   text-align: center;
-  font-size: 350%;
+  font-size: 5vw;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0%
@@ -22,11 +22,11 @@
 
 .box2 {
   width: 100%;
-  padding-top:200px;
-  padding-bottom: 10px;
-  padding-right: 30px;
+  padding-top:20%;
+  padding-bottom: 1%;
+  padding-right: 3%;
   text-align: right;
-  font-size: 250%;
+  font-size: 3vw;
   font-style: italic;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
@@ -36,17 +36,18 @@
 .box3 {
   float: left;
   width: 33.33%;
-  padding: 50px;
+  padding: 5%;
   background-color: white;
-  border:30px solid orangered;
+  border:1em solid orangered;
   text-align: center;
-  font-size: 250%;
+  font-size: 3vw;
   color: orangered;
   font-family: Arial, Helvetica, sans-serif  
 }
 
 .box4{
-  background-color: rgb(103, 123, 182)
+  background-color: rgb(103, 123, 182);
+  display: block;
 }
 
 .clearfix::after {
@@ -62,6 +63,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 img { 
@@ -75,30 +77,37 @@ img {
 input[type=button]{
   background-color:orangered;
   color: white;
-  font-size:200%;
+  font-size:2.5vw;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 12px 30px;
-  text-decoration: none;
-  margin: 0%;
+  padding: 1%;
   cursor:pointer; 
-  border: 2px solid black
+  border: 0.1em solid black;
   
 }
 
 input[type=email]{
-  width: 70%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  font-size: 200%;
-  border: 2px solid black;
+  width: 35%;
+  padding: 1%;
+  font-size: 2.5vw;
+  border: 0.1em solid black;
 }
 
 .boasVindas{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 200%;
-  color: orangered
+  font-size: 2.5vw;
+  color: orangered;
+  position: absolute;
+  padding-top: 10%;
+  
 }
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .box1, .box2, .box3, .box4, .box5 {
+    width:100%;
+  }
+}
+
 
 </style>
 </head>
@@ -120,45 +129,39 @@ input[type=email]{
 </div>
 
 <div class="clearfix"><b>
-    <div class="box3">
+  <div class="box3">
     <p>HTML</p>
-    </div>
-    <div class="box3">
-    <p>CSS</p>
-    </div>
-    <div class="box3">
-    <p>Javascript</p>
-    </div></b>
   </div>
+  <div class="box3">
+    <p>CSS</p>
+  </div>
+  <div class="box3">
+    <p>Javascript</p>
+  </div></b>
+</div> 
 
-
-<div class="box5">
-  <form action="x" autocomplete="on">
-    <div>
-      <input type="email" id="email" placeholder="Coloque aqui o seu email">
-      <input type="button" onclick="message()" value="Enviar">
-      <p id="boasVindas" class="boasVindas" ></p>
-    </div>  
-  </form>
-    
+<div>
+  <form class="box5" autocomplete="on">
+    <input type="email" id="email" placeholder="Coloque aqui o seu email">
+    <input type="button" onclick="message()" value="Enviar"> 
+    <p id="boasVindas" class="boasVindas"></p>
+  </form>    
 </div>
+  
 
 <script>
   function message(){
-    var e = document.getElementById("email").value;
-    var message = "O email " + e + " foi enviado";
-    var arroba = e.search("@");
-    var name = e.slice(0, arroba)
-    var domain = e.slice(arroba + 1)
+    var email = document.getElementById("email").value;
+    var arroba = email.search("@");
+    var name = email.slice(0, arroba)
+    var domain = email.slice(arroba + 1)
         
     if (arroba != -1 && name != "" && domain != ""){
-      alert(message)
-      document.getElementById("boasVindas").innerHTML = "Bem vindo " + e
+      alert("O email " + email + " foi enviado")
+      document.getElementById("boasVindas").innerHTML = "Bem vindo " + email
     } else {
       alert("Email inválido")
     }
-    
-    
 
   }
 </script>

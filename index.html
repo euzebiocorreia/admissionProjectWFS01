@@ -120,13 +120,12 @@ input[type=email]{
   <div>
     <h1 class="box1"><b>Projeto seletivo Future4</b></h1>
   </div>
-  <picture>
-    <img src="future4.jpg" alt="logomarca future4" width="700" height="350" >
-  </picture>
+  
+  <img src="future4.jpg" alt="logomarca future4" width="700" height="350" >
+  
   <div>
     <h2 class="box2"><b>Turma Web Full Stack 01</b></h2>
   </div>
-
 
 </div>
 
@@ -160,7 +159,7 @@ input[type=email]{
         
     if (arroba != -1 && name != "" && domain != ""){
       alert("O email " + email + " foi enviado")
-      document.getElementById("boasVindas").innerHTML = "Bem vindo " + email
+      document.getElementById("boasVindas").innerHTML = "Bem vindo " + email + "!"
     } else {
       alert("Email inválido")
     }
